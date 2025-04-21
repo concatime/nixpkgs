@@ -200,11 +200,8 @@ rec {
       '';
       target = "zImage";
     };
-    gcc = {
-      # https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications
-      arch = "armv6kz";
-      fpu = "vfpv2";
-    };
+    # https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications
+    gcc.arch = "armv6kz+fp";
   };
 
   # Legacy attribute, for compatibility with existing configs only.
@@ -297,9 +294,8 @@ rec {
   armv7a-android = {
     linux-kernel.name = "armeabi-v7a";
     gcc = {
-      arch = "armv7-a";
+      arch = "armv7-a+fp";
       float-abi = "softfp";
-      fpu = "vfpv3-d16";
     };
   };
 
@@ -347,8 +343,7 @@ rec {
 
       # vfpv3-d16 is what Debian uses and seems to be the best compromise: NEON is not supported in e.g. Scaleway or Tegra 2,
       # and the above page suggests NEON is only an improvement with hand-written assembly.
-      arch = "armv7-a";
-      fpu = "vfpv3-d16";
+      arch = "armv7-a+fp";
 
       # For Raspberry Pi the 2 the best would be:
       #   cpu = "cortex-a7";

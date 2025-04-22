@@ -243,7 +243,6 @@ rec {
     gcc = {
       cpu = "cortex-a7";
       fpu = "neon-vfpv4";
-      float-abi = "hard";
     };
   };
 

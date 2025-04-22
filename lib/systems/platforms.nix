@@ -225,8 +225,8 @@ rec {
       DTB = true;
     };
     gcc = {
-      fpu = "neon";
-      cpu = "cortex-a9";
+      arch = "armv7-a+mp+sec+neon-fp16";
+      tune = "cortex-a9";
     };
   };
 
@@ -241,8 +241,8 @@ rec {
       target = "zImage";
     };
     gcc = {
-      cpu = "cortex-a7";
-      fpu = "neon-vfpv4";
+      arch = "armv7ve+simd";
+      tune = "cortex-a7";
     };
   };
 
@@ -266,8 +266,8 @@ rec {
       DTB = true;
     };
     gcc = {
-      cpu = "cortex-a9";
-      fpu = "neon";
+      arch = "armv7-a+mp+sec+neon-fp16";
+      tune = "cortex-a9";
     };
   };
 
@@ -389,6 +389,7 @@ rec {
 
   apple-m1 = {
     gcc = {
+      # TODO: armv8.4-a ...
       arch = "armv8.3-a+crypto+sha2+aes+crc+fp16+lse+simd+ras+rdm+rcpc";
       cpu = "apple-a14";
     };

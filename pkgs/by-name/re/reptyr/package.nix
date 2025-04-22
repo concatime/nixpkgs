@@ -35,6 +35,7 @@ stdenv.mkDerivation rec {
   ];
 
   meta = {
+    # TODO: platforms.linux ++ platform.freebsd
     platforms = [
       "i686-linux"
       "x86_64-linux"

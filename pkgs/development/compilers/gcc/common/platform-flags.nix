@@ -16,7 +16,7 @@ lib.concatLists [
   (lib.optional (p ? abi) "--with-abi=${p.abi}")
   (lib.optional (p ? fpu) "--with-fpu=${p.fpu}")
   (lib.optional (p ? float) "--with-float=${p.float}")
-  (lib.optional (p ? mode) "--with-mode=${p.mode}")
+  (lib.optional (p ? thumb && p.thumb) "--with-mode=thumb")
   (lib.optionals targetPlatform.isPower64
     # musl explicitly rejects 128-bit long double on
     # powerpc64; see musl/arch/powerpc64/bits/float.h

@@ -314,7 +314,6 @@ let
       # vs. soft floats we use it here.
       optional (targetPlatform ? gcc.float-abi) "-mfloat-abi=${targetPlatform.gcc.float-abi}"
     ++ optional (targetPlatform ? gcc.fpu) "-mfpu=${targetPlatform.gcc.fpu}"
-    ++ optional (targetPlatform ? gcc.mode) "-mmode=${targetPlatform.gcc.mode}"
     ++ optional (targetPlatform ? gcc.thumb) "-m${thumb}"
     ++ optional (tune != null) "-mtune=${tune}";
 

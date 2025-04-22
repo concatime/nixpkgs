@@ -296,6 +296,7 @@ rec {
     gcc = {
       arch = "armv7-a+fp";
       float-abi = "softfp";
+      thumb = true;
     };
   };
 
